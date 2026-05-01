@@ -129,6 +129,9 @@ body {
 .nl-link.active::after {
     width: 100%;
 }
+.nl-link-light::after {
+    background: #ffffff;
+}
 
 /* Button sharp Americana */
 .btn-red {

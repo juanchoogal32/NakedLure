@@ -4,7 +4,7 @@ import { ShoppingBag, Menu, X, Search } from "lucide-react";
 import { useCart } from "../context/CartContext";
 
 const LOGO =
-  "https://customer-assets.emergentagent.com/job_34afdf14-6d91-4e00-af4a-38ae101f3446/artifacts/vkap8h59_Naked%20Lure.png";
+  "https://customer-assets.emergentagent.com/job_sierra-lure-gear/artifacts/bj8ur19k_Naked%20Lure%20White.png";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -45,12 +45,12 @@ const Header = () => {
       </div>
 
       <header
-        className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100"
+        className="sticky top-0 z-40 bg-[#c8102e] border-b border-white/10"
         data-testid="site-header"
       >
         <div className="max-w-[1400px] mx-auto px-5 md:px-10 flex items-center justify-between h-28 py-3">
           <button
-            className="md:hidden p-2 -ml-2"
+            className="md:hidden p-2 -ml-2 text-white"
             onClick={() => setMobileOpen(true)}
             data-testid="mobile-menu-open-btn"
             aria-label="Open menu"
@@ -69,8 +69,8 @@ const Header = () => {
                 to={n.to}
                 end={n.to === "/"}
                 className={({ isActive }) =>
-                  `nl-link text-[13px] uppercase tracking-[0.18em] font-bold ${
-                    isActive ? "text-[#c8102e] active" : "text-[#0a0a0a] hover:text-[#c8102e]"
+                  `nl-link nl-link-light text-[13px] uppercase tracking-[0.18em] font-bold ${
+                    isActive ? "text-white active" : "text-white/85 hover:text-white"
                   }`
                 }
                 data-testid={`nav-link-${n.label.toLowerCase()}`}
@@ -83,7 +83,7 @@ const Header = () => {
           <div className="flex items-center gap-2">
             <Link
               to="/shop"
-              className="hidden sm:inline-flex p-2 hover:text-[#c8102e] transition-colors"
+              className="hidden sm:inline-flex p-2 text-white hover:text-white/70 transition-colors"
               data-testid="search-link"
               aria-label="Search"
             >
@@ -91,14 +91,14 @@ const Header = () => {
             </Link>
             <button
               onClick={() => setDrawerOpen(true)}
-              className="relative p-2 hover:text-[#c8102e] transition-colors"
+              className="relative p-2 text-white hover:text-white/70 transition-colors"
               data-testid="open-cart-btn"
               aria-label="Open cart"
             >
               <ShoppingBag className="w-6 h-6" />
               {totals.count > 0 && (
                 <span
-                  className="absolute -top-1 -right-1 bg-[#c8102e] text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center"
+                  className="absolute -top-1 -right-1 bg-white text-[#c8102e] text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center"
                   data-testid="cart-count-badge"
                 >
                   {totals.count}

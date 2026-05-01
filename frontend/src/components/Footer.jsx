@@ -10,11 +10,8 @@ const Footer = () => {
     <footer className="bg-[#0a0a0a] text-white" data-testid="site-footer">
       <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-20 grid grid-cols-1 md:grid-cols-12 gap-12">
         <div className="md:col-span-5">
-          <div className="flex items-center gap-3 mb-6">
-            <img src={LOGO} alt="Naked Lure" className="h-14 w-14 object-contain bg-white rounded-full p-1" />
-            <h3 className="font-display text-3xl font-black tracking-tight">
-              Naked <span className="text-[#c8102e]">Lure</span>
-            </h3>
+          <div className="mb-6">
+            <img src={LOGO} alt="Naked Lure" className="h-20 md:h-24 w-auto object-contain" />
           </div>
           <p className="text-white/70 leading-relaxed max-w-md">
             Patriotic fishing apparel for anglers who value freedom, adventure, and wild water. Built rugged.
