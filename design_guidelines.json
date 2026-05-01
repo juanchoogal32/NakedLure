@@ -1,0 +1,95 @@
+{
+  "theme": "light",
+  "archetype": "4",
+  "archetype_name": "Swiss & High-Contrast (Adapted for Americana)",
+  "color_palette": {
+    "primary": "#C8102E",
+    "primary_hover": "#A00D25",
+    "background": "#FFFFFF",
+    "surface": "#F9F9F9",
+    "text_main": "#0A0A0A",
+    "text_muted": "#555555",
+    "accent": "#C8102E",
+    "dark_section": "#0A0A0A",
+    "border": "#E5E5E5"
+  },
+  "typography": {
+    "heading_font": "Playfair Display",
+    "body_font": "Manrope",
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl lg:text-7xl tracking-tighter font-black text-white",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl tracking-tight font-bold text-[#0A0A0A]",
+      "h3": "text-xl sm:text-2xl font-bold text-[#0A0A0A]",
+      "body": "text-base leading-relaxed text-[#555555]",
+      "small": "text-sm uppercase tracking-widest font-bold text-[#C8102E]"
+    }
+  },
+  "spacing_and_layout": {
+    "container_padding": "px-6 py-12 md:px-12 md:py-24 lg:px-24",
+    "grid_bento": "grid-cols-1 md:grid-cols-12 gap-8",
+    "product_grid": "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12"
+  },
+  "components": {
+    "buttons": "rounded-none border-2 border-[#C8102E] bg-[#C8102E] text-white hover:bg-white hover:text-[#C8102E] transition-colors font-bold uppercase tracking-widest px-8 py-4",
+    "product_card": "group flex flex-col overflow-hidden bg-white hover:-translate-y-1 transition-transform duration-300. Image container MUST use bg-[#111111] (dark background) to seamlessly blend the dark cloth of the product photos. Product details (title, price, button) sit below on white background.",
+    "header": "sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-100",
+    "footer": "bg-[#0A0A0A] text-white py-20",
+    "badges": "bg-[#C8102E] text-white uppercase text-xs font-bold tracking-wider px-3 py-1"
+  },
+  "media": {
+    "images": {
+      "logo": "https://customer-assets.emergentagent.com/job_34afdf14-6d91-4e00-af4a-38ae101f3446/artifacts/vkap8h59_Naked%20Lure.png",
+      "hero_banner": "https://images.unsplash.com/photo-1491847658187-eeea406aa32a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwzfHxlYXN0ZXJuJTIwc2llcnJhJTIwbGFuZHNjYXBlfGVufDB8fHx8MTc3NzYyNjM0Mnww&ixlib=rb-4.1.0&q=85",
+      "about_lifestyle": "https://images.pexels.com/photos/11315282/pexels-photo-11315282.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "patriotic_flag": "https://images.unsplash.com/photo-1591448687627-6fe916f7f26e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHxhbWVyaWNhbiUyMGZsYWclMjBvdXRkb29yc3xlbnwwfHx8fDE3Nzc2MjYzNDJ8MA&ixlib=rb-4.1.0&q=85",
+      "products": [
+        {
+          "id": "p1",
+          "name": "Grateful Dead Skeleton Fishing",
+          "url": "https://customer-assets.emergentagent.com/job_34afdf14-6d91-4e00-af4a-38ae101f3446/artifacts/7qkhetdu_Patriotic%20Graphic%20Shirt_Grateful%20Dead.png",
+          "category": "Patriotic Graphics",
+          "price": 34.99
+        },
+        {
+          "id": "p2",
+          "name": "Trout Surfing",
+          "url": "https://customer-assets.emergentagent.com/job_34afdf14-6d91-4e00-af4a-38ae101f3446/artifacts/1jxpfgtl_Patriotic%20Graphic%20Shirt_Trout%20Surfing.png",
+          "category": "Outdoor Lifestyle",
+          "price": 34.99
+        },
+        {
+          "id": "p3",
+          "name": "Eastern Sierra",
+          "url": "https://customer-assets.emergentagent.com/job_34afdf14-6d91-4e00-af4a-38ae101f3446/artifacts/aljoxthz_Patriotic%20Graphic%20Shirt_Eastern%20Sierra.png",
+          "category": "Fishing Shirts",
+          "price": 34.99
+        },
+        {
+          "id": "p4",
+          "name": "America Loves Fishing",
+          "url": "https://customer-assets.emergentagent.com/job_34afdf14-6d91-4e00-af4a-38ae101f3446/artifacts/90cjfdnb_Patriotic%20Graphic%20Shirt_America%20Loves%20FIshing.png",
+          "category": "Patriotic Graphics",
+          "price": 34.99
+        }
+      ]
+    }
+  },
+  "motion_and_interactions": {
+    "hover_states": "Buttons use harsh bg inversion. Product cards lift slightly with shadow. Links use red underline animation.",
+    "transitions": "transition-all duration-300 ease-out"
+  },
+  "accessibility": {
+    "contrast": "Red (#C8102E) on White (#FFFFFF) is high contrast. Keep text size large enough.",
+    "testing_attributes": "Add data-testid to all interactive elements."
+  },
+  "instructions_to_main_agent": [
+    "Build standard React app with Tailwind CSS.",
+    "Use Lucide-react for icons.",
+    "Construct standard e-commerce routes: Home, Shop, About, Contact, Admin.",
+    "For the hero banner, use a dark gradient overlay (e.g., bg-black/40) over the Eastern Sierra landscape so the white text and red accents pop.",
+    "CRITICAL: Product images have a dark cloth background. Ensure the image wrapper in the product card has a dark background (e.g., bg-[#111] or bg-black) to blend seamlessly with the image edges, acting as a dramatic frame.",
+    "Use Playfair Display for headings and Manrope for body text. Make sure fonts are imported via Google Fonts in index.html or global CSS.",
+    "Implement a mock Cart drawer (using Shadcn Sheet) and a Mock Checkout flow.",
+    "Admin page should allow adding, editing, and deleting products. Use simple local state or localStorage for data persistence during the session."
+  ]
+}
