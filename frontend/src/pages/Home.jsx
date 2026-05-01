@@ -2,12 +2,40 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchProducts } from "../lib/api";
 import ProductCard from "../components/ProductCard";
-import { ArrowRight, Truck, ShieldCheck, Award, Flag } from "lucide-react";
+import { ArrowRight, Truck, ShieldCheck, Award, Flag, Star, Quote } from "lucide-react";
 
 const HERO_IMG =
   "https://images.unsplash.com/photo-1491847658187-eeea406aa32a?auto=format&fit=crop&w=2000&q=80";
 const LIFESTYLE_IMG =
   "https://images.pexels.com/photos/11315282/pexels-photo-11315282.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1100&w=1500";
+const VIDEO_SRC =
+  "https://videos.pexels.com/video-files/4830204/4830204-sd_960_506_25fps.mp4";
+const VIDEO_POSTER =
+  "https://images.pexels.com/videos/4830204/bearded-cane-cap-country-4830204.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1500";
+
+const TESTIMONIALS = [
+  {
+    name: "Jake R.",
+    location: "Bishop, CA",
+    rating: 5,
+    title: "Holds up after 40+ wash cycles",
+    body: "Bought the Eastern Sierra tee in March. It's been on every fly trip since — June Lake, Mammoth, the Owens. Still looks new. The print hasn't cracked once. Heavyweight cotton is the real deal.",
+  },
+  {
+    name: "Marcus D.",
+    location: "Bozeman, MT",
+    rating: 5,
+    title: "Fits like an old friend",
+    body: "Most graphic tees feel like cardboard. Naked Lure shirts are soft from day one and only get better. Got the America Loves Fishing — wife stole it. Ordering two more.",
+  },
+  {
+    name: "Chris P.",
+    location: "Asheville, NC",
+    rating: 5,
+    title: "Built for the river",
+    body: "Wading in the Davidson, snagged my shirt on a branch. Zero damage. The stitching is solid and the cotton is thick. Worth every penny — probably my favorite fishing tee.",
+  },
+];
 
 const Home = () => {
   const [featured, setFeatured] = useState([]);
@@ -120,6 +148,45 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Video — Worn in the Wild */}
+      <section className="relative bg-[#0a0a0a] text-white overflow-hidden" data-testid="video-section">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-20 md:py-28">
+          <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
+            <div>
+              <p className="text-xs uppercase tracking-[0.28em] text-[#c8102e] font-bold mb-4">
+                <span className="inline-block w-8 h-[2px] bg-[#c8102e] align-middle mr-3" />
+                Worn in the Wild
+              </p>
+              <h2 className="font-display text-4xl md:text-6xl font-black tracking-tight leading-[0.95]">
+                Fishermen. Rivers. <span className="text-[#c8102e]">Naked Lure.</span>
+              </h2>
+            </div>
+            <p className="text-white/70 max-w-md leading-relaxed">
+              Real anglers, real water, real shirts. Watch the collection out in the field where it
+              was built to live.
+            </p>
+          </div>
+
+          <div className="relative aspect-video w-full overflow-hidden bg-black border border-white/10" data-testid="home-video-wrapper">
+            <video
+              src={VIDEO_SRC}
+              poster={VIDEO_POSTER}
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              preload="metadata"
+              className="w-full h-full object-cover"
+              data-testid="home-video"
+            />
+            <span className="absolute top-4 left-4 bg-[#c8102e] text-white text-[10px] uppercase tracking-[0.22em] font-bold px-3 py-1.5 z-10">
+              Field Film · 01
+            </span>
+          </div>
+        </div>
+      </section>
+
       {/* Lifestyle / brand split */}
       <section className="bg-[#0a0a0a] text-white" data-testid="lifestyle-section">
         <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
@@ -203,6 +270,74 @@ const Home = () => {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Testimonials — Quality feedback */}
+      <section className="bg-[#f9f9f9]" data-testid="testimonials-section">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-20 md:py-28">
+          <div className="text-center mb-14">
+            <p className="text-xs uppercase tracking-[0.28em] text-[#c8102e] font-bold mb-4">
+              From the Riverbank
+            </p>
+            <h2 className="font-display text-4xl md:text-6xl font-black tracking-tight">
+              Built rugged. <span className="text-[#c8102e]">Worn loud.</span>
+            </h2>
+            <div className="flex items-center justify-center gap-2 mt-6">
+              <div className="flex" data-testid="overall-stars">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-[#c8102e] text-[#c8102e]" />
+                ))}
+              </div>
+              <span className="text-sm font-bold ml-2">4.9 / 5</span>
+              <span className="text-sm text-[#555]">· 312 verified reviews</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {TESTIMONIALS.map((t, i) => (
+              <article
+                key={i}
+                className="relative bg-white p-8 md:p-10 border-t-2 border-[#c8102e] shadow-[0_1px_0_0_rgba(0,0,0,0.04)] hover:shadow-[0_12px_30px_-12px_rgba(0,0,0,0.18)] transition-shadow flex flex-col"
+                data-testid={`testimonial-${i}`}
+              >
+                <Quote className="w-9 h-9 text-[#c8102e] mb-5" />
+                <div className="flex mb-4" data-testid={`testimonial-stars-${i}`}>
+                  {Array.from({ length: t.rating }).map((_, k) => (
+                    <Star key={k} className="w-4 h-4 fill-[#c8102e] text-[#c8102e]" />
+                  ))}
+                </div>
+                <h3 className="font-display text-xl font-bold mb-3" data-testid={`testimonial-title-${i}`}>
+                  {t.title}
+                </h3>
+                <p className="text-[#555] leading-relaxed flex-1" data-testid={`testimonial-body-${i}`}>
+                  "{t.body}"
+                </p>
+                <div className="mt-6 pt-5 border-t border-gray-100">
+                  <p className="font-bold text-sm" data-testid={`testimonial-name-${i}`}>{t.name}</p>
+                  <p className="text-xs uppercase tracking-[0.18em] text-[#c8102e] font-bold mt-1">
+                    {t.location} · Verified Buyer
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-gray-200" data-testid="quality-badges">
+            {[
+              { k: "6.5oz", v: "Heavyweight Cotton" },
+              { k: "Pre-shrunk", v: "True to Size" },
+              { k: "Screen Printed", v: "Crack-Free Graphics" },
+              { k: "Reinforced", v: "Double-Stitched Seams" },
+            ].map((s, i) => (
+              <div key={i} className="text-center" data-testid={`quality-badge-${i}`}>
+                <div className="font-display text-2xl md:text-3xl font-black text-[#0a0a0a]">{s.k}</div>
+                <div className="text-[11px] uppercase tracking-[0.2em] text-[#555] mt-2 font-bold">
+                  {s.v}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
