@@ -58,11 +58,8 @@ const Header = () => {
             <Menu className="w-6 h-6" />
           </button>
 
-          <Link to="/" className="flex items-center gap-3" data-testid="header-logo-link">
-            <img src={LOGO} alt="Naked Lure" className="h-12 w-12 object-contain" />
-            <span className="font-display font-black text-xl sm:text-2xl tracking-tight hidden sm:block">
-              Naked <span className="text-[#c8102e]">Lure</span>
-            </span>
+          <Link to="/" className="flex items-center" data-testid="header-logo-link">
+            <img src={LOGO} alt="Naked Lure" className="h-16 sm:h-20 w-auto object-contain" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-10" data-testid="desktop-nav">
