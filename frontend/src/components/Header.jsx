@@ -48,7 +48,7 @@ const Header = () => {
         className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100"
         data-testid="site-header"
       >
-        <div className="max-w-[1400px] mx-auto px-5 md:px-10 flex items-center justify-between h-20">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-10 flex items-center justify-between h-28 py-3">
           <button
             className="md:hidden p-2 -ml-2"
             onClick={() => setMobileOpen(true)}
@@ -58,8 +58,8 @@ const Header = () => {
             <Menu className="w-6 h-6" />
           </button>
 
-          <Link to="/" className="flex items-center" data-testid="header-logo-link">
-            <img src={LOGO} alt="Naked Lure" className="h-16 sm:h-20 w-auto object-contain" />
+          <Link to="/" className="flex items-center px-2" data-testid="header-logo-link">
+            <img src={LOGO} alt="Naked Lure" className="h-20 sm:h-24 w-auto object-contain" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-10" data-testid="desktop-nav">
