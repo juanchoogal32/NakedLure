@@ -48,7 +48,7 @@ const Shop = () => {
       </section>
 
       {/* Filters */}
-      <section className="border-b border-gray-100 sticky top-28 bg-white/95 backdrop-blur-md z-30" data-testid="shop-filters">
+      <section className="border-b border-gray-100 sticky top-[118px] bg-white/95 backdrop-blur-md z-30" data-testid="shop-filters">
         <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-4 flex items-center gap-4 overflow-x-auto">
           <span className="text-[11px] uppercase tracking-[0.2em] font-bold text-[#555] shrink-0">
             Filter:

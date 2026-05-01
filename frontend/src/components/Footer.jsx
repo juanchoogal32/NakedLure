@@ -8,6 +8,7 @@ const LOGO =
 const Footer = () => {
   return (
     <footer className="bg-[#0a0a0a] text-white" data-testid="site-footer">
+      <div className="h-1.5 bg-white" data-testid="footer-stripe" />
       <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-20 grid grid-cols-1 md:grid-cols-12 gap-12">
         <div className="md:col-span-5">
           <div className="mb-6">

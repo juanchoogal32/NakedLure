@@ -45,10 +45,11 @@ const Header = () => {
       </div>
 
       <header
-        className="sticky top-0 z-40 bg-[#c8102e] border-b border-white/10"
+        className="sticky top-0 z-40"
         data-testid="site-header"
       >
-        <div className="max-w-[1400px] mx-auto px-5 md:px-10 flex items-center justify-between h-28 py-3">
+        <div className="bg-[#c8102e]">
+          <div className="max-w-[1400px] mx-auto px-5 md:px-10 flex items-center justify-between h-28 py-3">
           <button
             className="md:hidden p-2 -ml-2 text-white"
             onClick={() => setMobileOpen(true)}
@@ -62,15 +63,15 @@ const Header = () => {
             <img src={LOGO} alt="Naked Lure" className="h-20 sm:h-24 w-auto object-contain" />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-10" data-testid="desktop-nav">
+          <nav className="hidden md:flex items-center gap-12" data-testid="desktop-nav">
             {navItems.map((n) => (
               <NavLink
                 key={n.to}
                 to={n.to}
                 end={n.to === "/"}
                 className={({ isActive }) =>
-                  `nl-link nl-link-light text-[13px] uppercase tracking-[0.18em] font-bold ${
-                    isActive ? "text-white active" : "text-white/85 hover:text-white"
+                  `nl-link nl-link-light text-[15px] uppercase tracking-[0.24em] font-extrabold ${
+                    isActive ? "text-white active" : "text-white hover:text-white/80"
                   }`
                 }
                 data-testid={`nav-link-${n.label.toLowerCase()}`}
@@ -106,7 +107,9 @@ const Header = () => {
               )}
             </button>
           </div>
+          </div>
         </div>
+        <div className="h-1.5 bg-white" data-testid="header-stripe" />
       </header>
 
       {/* Mobile drawer */}
